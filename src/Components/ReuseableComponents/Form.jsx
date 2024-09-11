@@ -10,6 +10,7 @@ const Form = ({fieldConfigs,buttonConfig,InputConfig}) => {
     e.preventDefault()
     console.log(formData);
   }
+  
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({

@@ -15,12 +15,16 @@ const fieldConfigs = [
     { name: 'state', label: 'State', placeholder: 'Enter your state', type: 'text', required: true }
   ];  
 
-  const buttonConfig = [
-
-  ]
-  const InputConfig = [
-    
-  ]
+  const buttonConfig = {
+    label:"continue",
+    type:"Submit",
+    btnWidth:"90%",
+    btnHeigth:"50px"
+  }
+  const InputConfig = {
+    inputWidth:"100px",
+    inputHeigth:"50px"
+  }
 
 const FormPage = () => {
   return (
