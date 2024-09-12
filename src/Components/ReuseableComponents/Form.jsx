@@ -1,58 +1,61 @@
-import React, { useState } from 'react'
-import InputField from './InputField'
+import React, { useState } from 'react';
+import InputField from './InputField';
+import Button from './Button';
 
-const Form = ({fieldConfigs,buttonConfig,InputConfig}) => {
-
+const Form = ({ fieldConfigs, buttonConfig, InputConfig, getApiEndpoints }) => {
   const [formData, setFormData] = useState({});
 
-
-  const handleSubmit= (e)=>{
-    e.preventDefault()
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(formData);
-  }
-  
+    setFormData({}); 
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   return (
-    <div className='w-2/6 shadow-md shadow-gray-600  p-5'>
+    <div className="shadow-md shadow-gray-600 p-5">
       <div>
-        <h1 className='text-center font-medium'>Enter data</h1>
-        <img className='w-2/6 pb-5 mx-auto' src="https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=" alt="" />
+        <h1 className="text-center font-medium">Enter data</h1>
+        <img
+          className="w-2/6 pb-5 mx-auto"
+          src="https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0="
+          alt="profile"
+        />
       </div>
-      <form onSubmit={handleSubmit} className='text-black'>
-      {fieldConfigs.map((field) => (
-        <div key={field.name} className="mb-4 ">
-          <label htmlFor={field.name} className="block text-sm font-medium text-white">
-            {field.label}
-          </label>
-          <input 
-            id={field.name}
-            name={field.name}
-            type={field.type}
-            placeholder={field.placeholder}
-            required={field.required}
-            value={formData[field.name] || ''}
-            onChange={handleInputChange}
-            className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+      <form onSubmit={handleSubmit} className="text-black">
+        {fieldConfigs.map((field) => (
+          <div key={field.name} className="mb-4">
+            <InputField
+              name={field.name}
+              type={field.type}
+              placeholder={field.placeholder}
+              value={formData[field.name] || ''}
+              onChange={handleInputChange}
+              inputWidth={InputConfig.inputWidth} 
+              onBlur={() => {}} 
+              touched={false} 
+              error={''} 
+            />
+          </div>
+        ))}
+        <div className="flex justify-center pt-5">
+          <Button
+            label={buttonConfig.label}
+            type={buttonConfig.type}
+            btnWidth={buttonConfig.btnWidth}
+            btnHeight={buttonConfig.btnHeight}
           />
         </div>
-      ))}
-      <div className='flex justify-center'>
-      <button 
-        type="submit"
-        className="bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-secondary transition-all duration-300">
-        Submit
-      </button>
-      </div>
-    </form>
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

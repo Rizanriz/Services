@@ -22,8 +22,16 @@ const fieldConfigs = [
     btnHeigth:"50px"
   }
   const InputConfig = {
-    inputWidth:"100px",
+    inputWidth:"100%",
     inputHeigth:"50px"
+  }
+
+ const getApiEndpoints = async ()=>{
+    try {
+      
+    } catch (error) {
+      
+    }
   }
 
 const FormPage = () => {
@@ -32,7 +40,8 @@ const FormPage = () => {
         <Form 
         fieldConfigs={fieldConfigs} 
         buttonConfig={buttonConfig} 
-        InputConfig={InputConfig}/>
+        InputConfig={InputConfig}
+        getApiEndpoints={getApiEndpoints}/>
     </div>
   )
 }
