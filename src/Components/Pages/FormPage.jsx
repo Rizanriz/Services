@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from '../ReuseableComponents/Form'
+import Table from '../ReuseableComponents/Table';
 
 const fieldConfigs = [
     { name: 'fullname', label: 'Full Name', placeholder: 'Enter your full name', type: 'text', required: true },
@@ -19,18 +20,21 @@ const fieldConfigs = [
     label:"continue",
     type:"Submit",
     btnWidth:"90%",
-    btnHeigth:"50px"
+    btnHeight:"50px"
   }
   const InputConfig = {
     inputWidth:"100%",
     inputHeigth:"50px"
   }
 
- const getApiEndpoints = async ()=>{
+ const getApiEndpoints = async (FormData)=>{
     try {
-      
+      await new Promise((resolve) => setTimeout(resolve,1000))
+      console.log("Form date:" , FormData);
+      return {success:true ,data:FormData}
     } catch (error) {
-      
+      console.error("Eroor:" ,error);
+      return {success:false, error:error.message}
     }
   }
 

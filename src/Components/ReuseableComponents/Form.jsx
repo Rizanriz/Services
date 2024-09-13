@@ -4,11 +4,24 @@ import Button from './Button';
 
 const Form = ({ fieldConfigs, buttonConfig, InputConfig, getApiEndpoints }) => {
   const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    setFormData({}); 
+    const validationErrors = {};
+
+    fieldConfigs.forEach((field) => {
+      if (field.required && !formData[field.name]) {
+        validationErrors[field.name] = `${field.label} is required`;
+      }
+    });
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors); 
+      return; 
+    }
+    console.log('Form data:', formData);
+    setFormData({});  
   };
 
   const handleInputChange = (e) => {
@@ -16,6 +29,10 @@ const Form = ({ fieldConfigs, buttonConfig, InputConfig, getApiEndpoints }) => {
     setFormData({
       ...formData,
       [name]: value,
+    });
+    setErrors({
+      ...errors,
+      [name]: '', 
     });
   };
 
@@ -38,13 +55,15 @@ const Form = ({ fieldConfigs, buttonConfig, InputConfig, getApiEndpoints }) => {
               placeholder={field.placeholder}
               value={formData[field.name] || ''}
               onChange={handleInputChange}
-              inputWidth={InputConfig.inputWidth} 
-              onBlur={() => {}} 
-              touched={false} 
-              error={''} 
+              inputWidth={InputConfig.inputWidth}
+              required={field.required}
             />
+            {errors[field.name] && (
+              <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p> 
+            )}
           </div>
         ))}
+        
         <div className="flex justify-center pt-5">
           <Button
             label={buttonConfig.label}

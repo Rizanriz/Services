@@ -1,12 +1,12 @@
 import React from 'react';
 
-const InputField = ({name,type,placeholder,value,onChange,onBlur,error,touched,inputWidth,inputHeigth}) => {
+const InputField = ({name,type,placeholder,value,onChange,onBlur,error,touched,inputWidth,inputHeight}) => {
   return (
     <div className="flex flex-col">
       {/* <label className="font-heading text-dark-gray">{label}</label> */}
       <input
         className="px-4 py-3 mt-1 rounded-md border border-light-gray bg-white font-input text-black focus:outline-none"
-        style={{ width: inputWidth, height: inputHeigth }}
+        style={{ width: inputWidth, height: inputHeight }}
         type={type}
         name={name}
         placeholder={placeholder}
