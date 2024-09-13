@@ -28,8 +28,6 @@ const SignIn = () => {
         </button>
       </div>
 
-      {/* Spacing at the bottom */}
-      <div className='h-28'></div>
     </div>
   )
 }

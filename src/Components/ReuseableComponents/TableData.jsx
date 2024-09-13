@@ -27,13 +27,13 @@ const TableData = () => {
     const newItem = {
       name: 'New User',
       id: data.length + 1,
-      date: new Date().toISOString().split('T')[0], // Current date
+      date: new Date().toISOString().split('T')[0], // Current date 
       completedServices: 0,
       location: 'Unknown',
       contact: 'newuser@example.com',
       status: 'Active',
     };
-    setData([newItem, ...data]); // Add new item to the top of the data array
+    setData([newItem, ...data]); 
   };
 
   const handleEdit = (id) => {
