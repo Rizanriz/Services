@@ -23,11 +23,22 @@ const TableData = () => {
     },
   ]);
 
+  const TableHead = [
+    {header:'Name' ,field:'name'},
+    {header:'ID' ,field:'ID'},
+    {header:'Date' ,field:'name'},
+    {header:'Completed Services' ,field:'Completed Services'},
+    {header:'Location' ,field:'Location'},
+    {header:'Contact' ,field:'Contact'},
+    {header:'Status' ,field:'Status'},
+    {header:'Action' ,field:'Action'},
+  ]
+
   const handleAddNewItem = () => {
     const newItem = {
       name: 'New User',
       id: data.length + 1,
-      date: new Date().toISOString().split('T')[0], // Current date 
+      date: new Date().toISOString().split('T')[0], // Current date   
       completedServices: 0,
       location: 'Unknown',
       contact: 'newuser@example.com',
@@ -48,6 +59,7 @@ const TableData = () => {
   return (
     <div>
       <Table data={data} 
+      TableHead={TableHead}
       handleAddNewItem={handleAddNewItem} 
       handleEdit={handleEdit} 
       handleDelete={handleDelete} />

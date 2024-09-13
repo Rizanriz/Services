@@ -14,7 +14,7 @@ const SignUp = () => {
       </div>
 
       <div className='flex flex-col gap-4 w-full max-w-sm'>
-        <h2 className='text-xl font-semibold'>{isSignUp ? 'Getting Started.!' : 'Welcome Back!'}</h2>
+        <h2 className='text-xl font-semibold'>{isSignUp ? 'Getting Started.!' : 'Welcome Bac k!'}</h2>
         <input type="text" placeholder='Email' required className='p-4 w-full rounded-2xl bg-medium-gray' />
         <input type="password" placeholder='Password' required className='p-4 w-full rounded-2xl bg-medium-gray' />
         
