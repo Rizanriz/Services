@@ -5,12 +5,14 @@ import SignUp from './Components/User/SignUp'
 import { Route, Routes } from 'react-router-dom'
 import TableData from './Components/ReuseableComponents/TableData'
 import Card from './Components/ReuseableComponents/Card/Card'
+import Home from './Components/Pages/Home'
 
 const App = () => {
   return (
     <div className='bg-dark-gray h-full text-light-gray'>
       <Routes>
-        <Route path='/' element={<FormPage/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/form' element={<FormPage/>}/>
         <Route path='/login' element={<SignIn/>}/>
         <Route path='/login/signup' element={<SignUp/>}/>
         <Route path='/table' element={<TableData/>}/>
