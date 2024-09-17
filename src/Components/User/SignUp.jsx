@@ -9,16 +9,26 @@ const SignUp = () => {
   const [isSignUp, setIsSignUp] = useState(true);
 
   const [currentLocation,setCurrentLocation] = useState({})
-  // useEffect(()=>{
-  //   getLocation()
-  // },[])
+  const [currentLocationGeo,setCurrentLocationGeo] = useState({})
 
-  const getLocation = async()=>{
+  useEffect(()=>{
+    // getLocation()
+    // getGeoLocation()
+  },[])
+
+  const getLocation = async()=>{ //ONE WAY
        const location = await axios.get("https://ipapi.co/json")
        setCurrentLocation(location.data)
-      //  console.log(currentLocation.city);
-
+       console.log(currentLocation.city);
   }
+
+  // const getGeoLocation = () =>{
+  //   navigator.geolocation.getCurrentPosition((position)=>{
+  //     console.log(position);
+  //     const {latitude,longitude} = position.coords
+  //     setCurrentLocationGeo({latitude,longitude})
+  //   })
+  // } 
 
   return (
     <div className='bg-light-gray h-screen text-black flex flex-col justify-center items-center px-4'>
