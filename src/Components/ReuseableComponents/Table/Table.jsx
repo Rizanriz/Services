@@ -54,7 +54,7 @@ const Table = ({ data, handleAddNewItem, handleEdit, TableHead }) => {
             <thead>
               <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                 {
-                  TableHead.map((item) => (
+                  TableHead.map((item,i) => (
                     <th className='font-serif text-xl p-2'>{item.header}</th>
                   ))
                 }

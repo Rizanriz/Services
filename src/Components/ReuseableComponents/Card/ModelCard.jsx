@@ -1,32 +1,47 @@
 import React from 'react';
+import Card from './Card';
 
-const ModalCard = ({ title, dis, isVisible, onClose }) => {
-  if (!isVisible) return null; // If not visible, don't render anything
+const cardDatas = [
+  {
+    title: "Project One",
+    description: "This is an awesome project built with Next.js and GSAP.",
+    image: "https://via.placeholder.com/150",
+    link: "https://yourwebsite.com/project-one"
+  },
+  {
+    title: "Project Two",
+    description: "Check out this amazing project built using Framer Motion.",
+    image: "https://via.placeholder.com/150",
+    link: "https://yourwebsite.com/project-two"
+  },
+  {
+    title: "Project Three",
+    description: "Explore this creative project featuring beautiful animations.",
+    image: "https://via.placeholder.com/150",
+    link: "https://yourwebsite.com/project-three"
+  },
+  {
+    title: "Project Four",
+    description: "A simple project showcasing great UI/UX design.",
+    image: "https://via.placeholder.com/150",
+    link: "https://yourwebsite.com/project-four"
+  }
+];
 
+const cardData = () => {
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center'>
-      <div className='bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-md  text-black'>
-        <div className='flex justify-between items-center mb-4'>
-          <h2 className='text-xl font-semibold'>{title}</h2>
-          <button onClick={onClose} className='text-gray-600 hover:text-gray-800'>
-            &#x2715; 
-          </button>
-        </div>
-
-        <div className='mb-4'>
-          {dis}
-        </div>
-
-        <div className='flex justify-end'>
-          <button 
-            onClick={onClose} 
-            className='bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600'>
-              Close
-          </button>
-        </div>
-      </div>
+    <div className="flex gap-1">
+      {cardDatas.map((card, index) => (
+        <Card
+          key={index}
+          title={card.title}
+          description={card.description}
+          image={card.image}
+          link={card.link}
+        />
+      ))}
     </div>
   );
 };
 
-export default ModalCard;
+export default cardData;

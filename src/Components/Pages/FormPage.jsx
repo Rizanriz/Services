@@ -1,6 +1,6 @@
 import React from 'react'
-import Form from '../ReuseableComponents/Form'
-import Table from '../ReuseableComponents/Table';
+import Form from '../ReuseableComponents/Form/Form'
+import Table from '../ReuseableComponents/Table/Table';
 
 const fieldConfigs = [
     { name: 'fullname', label: 'Full Name', placeholder: 'Enter your full name', type: 'text', required: true },

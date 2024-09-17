@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from "/LOGO.png"
 import arrow from "/arrow.svg"
 import google from "/googlee.svg"
+import location from "/location.svg"
+import axios from 'axios';
 
 const SignUp = () => {
   const [isSignUp, setIsSignUp] = useState(true);
+
+  const [currentLocation,setCurrentLocation] = useState({})
+  // useEffect(()=>{
+  //   getLocation()
+  // },[])
+
+  const getLocation = async()=>{
+       const location = await axios.get("https://ipapi.co/json")
+       setCurrentLocation(location.data)
+      //  console.log(currentLocation.city);
+
+  }
 
   return (
     <div className='bg-light-gray h-screen text-black flex flex-col justify-center items-center px-4'>
@@ -38,9 +52,14 @@ const SignUp = () => {
           <button>
             <img src={google} alt="google" className='w-10 h-10' />
           </button>
-          <button>
-            <img src={google} alt="google" className='w-10 h-10' />
+          <button onClick={getLocation}>
+            <img src={location} alt="google" className='w-10 h-10' />
           </button>
+          <div className='flex flex-col ml-5'>
+          <h1>{currentLocation.city}</h1>
+          <h1>{currentLocation.latitude}</h1>
+          <h1>{currentLocation.longitude}</h1>
+          </div>
         </div>
       </div>
 
