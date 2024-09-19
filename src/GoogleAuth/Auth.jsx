@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { account } from './AppWrite'; // Import the account instance
 import { useNavigate } from 'react-router-dom'; // For redirection
-import SignUp from '../Components/User/SignUp'; // Import your SignUp component
+import google from '/google.svg'
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Auth = () => {
   const handleGoogleLogin = async () => {
     console.log("Google login button clicked");
     try {
-      await account.createOAuth2Session('google', 'http://localhost:3000', 'http://localhost:3000');
+      await account.createOAuth2Session('google', 'http://localhost:5173','http://localhost:5173');
     } catch (error) {
       console.error("Error during Google login:", error.message);
     }
@@ -33,9 +33,11 @@ const Auth = () => {
   }, [navigate]);
 
   return (
-    <div> 
-      <SignUp handleGoogleLogin={handleGoogleLogin} /> {/* Pass the handleGoogleLogin prop */}
-    </div>
+    <> 
+      <button onClick={handleGoogleLogin}>
+          <img src={google} alt="google" className='w-10 h-10' />
+      </button>
+    </>
   );
 };
 

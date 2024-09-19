@@ -19,6 +19,7 @@ export default {
         "medium-gray": "#736A68",
         "grass": "#738514",
         "bgg": "#191919",
+        "bluee":"#4D44D5"
         }
     },
   },
