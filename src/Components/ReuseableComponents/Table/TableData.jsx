@@ -2,68 +2,31 @@ import React, { useState } from 'react';
 import Table from './Table';
 
 const TableData = () => {
-  const [data, setData] = useState([
-    {
-      name: 'John Doe',
-      id: 1,
-      date: '2024-09-12',
-      completedServices: 5,
-      location: 'New York',
-      contact: 'john@example.com',
-      status: 'Active',
-    },
-    {
-      name: 'Jane Smith',
-      id: 2,
-      date: '2024-09-11',
-      completedServices: 3,
-      location: 'Los Angeles',
-      contact: 'jane@example.com',
-      status: 'Inactive',
-    },
-  ]);
 
-  const TableHead = [
-    {header:'Name' ,field:'name'},
-    {header:'ID' ,field:'ID'},
-    {header:'Date' ,field:'name'},
-    {header:'Completed Services' ,field:'Completed Services'},
-    {header:'Location' ,field:'Location'},
-    {header:'Contact' ,field:'Contact'},
-    {header:'Status' ,field:'Status'},
-    {header:'Action' ,field:'Action'},
+
+  const tableConfig = {title:"Payment History", type:"paymentslog"}
+
+  const tableDataConfig=[
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Complete" },
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Cancelled" },
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Cancelled" },
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Cancelled" },
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Cancelled" },
+  {paymentId:"#12345678",date:"March 25, 2024",time:"12:45 PM",paymentAmount:"50,542",serviceStatus:"Cancelled" },
   ]
 
-  const handleAddNewItem = () => {
-    const newItem = {
-      name: 'New User',
-      id: data.length + 1,
-      date: new Date().toISOString().split('T')[0], // Current date   
-      completedServices: 0,
-      location: 'Unknown',
-      contact: 'newuser@example.com',
-      status: 'Active',
-    };
-    setData([newItem, ...data]); 
-  };
-
-  const handleEdit = (id) => {
-    console.log('Edit item with id:', id);
-    //edit functionality here
-  };
-  const handleDelete = (id) => {
-    console.log('Edit item with id:', id);
-    // delete functionality here
-  };
-  
+  const tableColConfig = ["paymentId",,"Date","time","paymentAmount","ServiceStatus"]
+    
   return (
-    <div>
-      <Table data={data} 
-      TableHead={TableHead}
-      handleAddNewItem={handleAddNewItem} 
-      handleEdit={handleEdit} 
-      handleDelete={handleDelete} />
+      <div className="w-full bg-[#787879] p-10">
+      <Table
+        tableColConfig={tableColConfig}
+        tableDataConfig={tableDataConfig}
+        tableConfig={tableConfig}
+      />
+     
     </div>
+    
   );
 };
 
