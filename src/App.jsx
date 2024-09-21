@@ -8,6 +8,7 @@ import Card from './Components/ReuseableComponents/Card/ModelCard'
 import Modal from './Components/ReuseableComponents/Modal/Modal'
 import Home from './Components/Pages/Home'
 import OTPVerification from './Components/User/OPTVerification'
+import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/modal' element={<Modal/>}/>
         <Route path='/card' element={<Card/>}/>
         <Route path='/opt' element={<OTPVerification/>}/>
+        <Route path='/paymentdata' element={<PaymentData/>}/>
       </Routes>
     </div>
   )
