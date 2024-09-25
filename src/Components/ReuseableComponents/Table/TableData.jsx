@@ -24,7 +24,6 @@ const TableData = () => {
         tableDataConfig={tableDataConfig}
         tableConfig={tableConfig}
       />
-     
     </div>
     
   );

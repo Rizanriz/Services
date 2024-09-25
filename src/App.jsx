@@ -9,10 +9,11 @@ import Modal from './Components/ReuseableComponents/Modal/Modal'
 import Home from './Components/Pages/Home'
 import OTPVerification from './Components/User/OPTVerification'
 import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
+import Complaint from './Components/complaints/complaint'
 
 const App = () => {
   return (
-    <div className='bg-dark-gray h-full text-light-gray'>
+    <div className='bg-dark-gray  text-light-gray'>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/form' element={<FormPage/>}/>
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='/card' element={<Card/>}/>
         <Route path='/opt' element={<OTPVerification/>}/>
         <Route path='/paymentdata' element={<PaymentData/>}/>
+        <Route path='/complaint' element={<Complaint/>}/>
       </Routes>
     </div>
   )
