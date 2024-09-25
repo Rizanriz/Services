@@ -38,8 +38,9 @@ const Card = ({ title, name, bookingId, disputeStatus, sideColor }) => {
 
     {/* Chat/Call Button */}
     <div className='flex justify-center'>
-    <Button onClick={() => console.log('Chat/Call clicked')} >
-      <div className="flex items-center justify-center px-6 lg:px-20 sm:px-16 gap-2">
+    <Button onClick={() => console.log('Chat/Call clicked')}
+     variant={'primary'} >
+      <div className="flex items-center justify-center px-6 lg:px-28 sm:px-16 gap-2">
         Chat/Call  <FaPhone />
       </div>
     </Button>

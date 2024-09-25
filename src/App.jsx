@@ -10,10 +10,11 @@ import Home from './Components/Pages/Home'
 import OTPVerification from './Components/User/OPTVerification'
 import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
 import Complaint from './Components/complaints/complaint'
+import Franchise from './Components/franchiseeDetails/Franchise'
 
 const App = () => {
   return (
-    <div className='bg-dark-gray  text-light-gray'>
+    <div className='text-light-gray'>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/form' element={<FormPage/>}/>
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='/opt' element={<OTPVerification/>}/>
         <Route path='/paymentdata' element={<PaymentData/>}/>
         <Route path='/complaint' element={<Complaint/>}/>
+        <Route path='/franshice' element={<Franchise/>}/>
       </Routes>
     </div>
   )
