@@ -10,7 +10,7 @@ import Home from './Components/Pages/Home'
 import OTPVerification from './Components/User/OPTVerification'
 import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
 import Complaint from './Components/complaints/complaint'
-import Franchise from './Components/franchiseeDetails/Franchise'
+import FranchiceDetails from './Components/franchiseeDetails/FranchiceDetails'
 
 const App = () => {
   return (
@@ -26,7 +26,7 @@ const App = () => {
         <Route path='/opt' element={<OTPVerification/>}/>
         <Route path='/paymentdata' element={<PaymentData/>}/>
         <Route path='/complaint' element={<Complaint/>}/>
-        <Route path='/franshice' element={<Franchise/>}/>
+        <Route path='/franshice' element={<FranchiceDetails/>}/>
       </Routes>
     </div>
   )
