@@ -11,6 +11,7 @@ import OTPVerification from './Components/User/OPTVerification'
 import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
 import Complaint from './Components/complaints/complaint'
 import FranchiceDetails from './Components/franchiseeDetails/FranchiceDetails'
+import PaymentPage from './Components/ReuseableComponents/Razorpay'
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path='/paymentdata' element={<PaymentData/>}/>
         <Route path='/complaint' element={<Complaint/>}/>
         <Route path='/franshice' element={<FranchiceDetails/>}/>
+        <Route path='/payment' element={<PaymentPage/>}/>
       </Routes>
     </div>
   )
