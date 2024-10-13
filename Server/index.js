@@ -3,7 +3,6 @@ const express = require("express")
 const Razorpay = require("razorpay")
 const razorpay =require("razorpay")
 const cors = require("cors")
-const crypto = require("crypto")
 
 const app = express()
 const PORT = process.env.PORT 
@@ -20,6 +19,8 @@ app.post("/order", async(req,res)=>{
     
     try{
     const options = req.body
+    console.log(options);
+    
     const order = await razorpay.orders.create(options)
     if(!order){
         return res.status(500).send("error")
