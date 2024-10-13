@@ -23,10 +23,10 @@ const PaymentPage = () => {
         console.log(order);
 
         var options = {
-            "key": "rzp_test_8hSLVlOgdh0y8m", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_test_8hSLVlOgdh0y8m", 
             amount,
             currency,
-            "name": "Acme Corp", //your business name
+            "name": "company", 
             "description": "Test Transaction",
             "image": "https://example.com/your_logo",
             "order_id": order.id, 
@@ -36,9 +36,9 @@ const PaymentPage = () => {
                 alert(response.razorpay_signature)
             },
             "prefill": { 
-                "name": "Gaurav Kumar", //your customer's name
+                "name": "Gaurav Kumar", 
                 "email": "gaurav.kumar@example.com", 
-                "contact": "9000090000"  //Provide the customer's phone number for better conversion rates 
+                "contact": "9000090000"   
             },
             "notes": {
                 "address": "Razorpay Corporate Office"

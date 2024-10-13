@@ -12,6 +12,8 @@ import PaymentData from './Components/ReuseableComponents/Table/PaymentData'
 import Complaint from './Components/complaints/complaint'
 import FranchiceDetails from './Components/franchiseeDetails/FranchiceDetails'
 import PaymentPage from './Components/ReuseableComponents/Razorpay'
+import Ereceipt from './Components/E-receipt/Ereceipt'
+import CheckoutSuccess from './Components/E-receipt/CheckoutSuccess'
 
 const App = () => {
   return (
@@ -29,6 +31,8 @@ const App = () => {
         <Route path='/complaint' element={<Complaint/>}/>
         <Route path='/franshice' element={<FranchiceDetails/>}/>
         <Route path='/payment' element={<PaymentPage/>}/>
+        <Route path='/receipt' element={<Ereceipt/>}/>
+        <Route path='/CheckoutSuccess' element={<CheckoutSuccess/>}/>
       </Routes>
     </div>
   )
