@@ -14,7 +14,7 @@ const Receipt = () => {
     ];
   
     return (
-      <div className="px-3">
+      <div className="px-3 ">
         <ReceiptForm data={receiptData} />
       </div>
     );

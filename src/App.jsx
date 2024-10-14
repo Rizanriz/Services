@@ -14,10 +14,12 @@ import FranchiceDetails from './Components/franchiseeDetails/FranchiceDetails'
 import PaymentPage from './Components/ReuseableComponents/Razorpay'
 import Ereceipt from './Components/E-receipt/Ereceipt'
 import CheckoutSuccess from './Components/E-receipt/CheckoutSuccess'
+import NavbarHead from './Components/nav/navbar'
 
 const App = () => {
   return (
     <div className='text-light-gray'>
+      <NavbarHead/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/form' element={<FormPage/>}/>
