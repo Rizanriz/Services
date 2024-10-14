@@ -24,7 +24,7 @@ const ReceiptForm = ({ data }) => {
         
         {data.map((item, index) => (
           <div key={index} className="flex text-sm text-gray-600 justify-between py-2 border-b border-gray-200 last:border-b-0">
-            <span className="text-gray-900 me-3">{item.label} :</span>
+            <span className="text-gray-900 me-3">{item.label} : </span>
             {item.label === 'TransactionID' ? (
               <div className="flex items-center ">
                 <span className="font-semibold mr-2">{item.value}</span>
